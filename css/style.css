@@ -1,6 +1,5 @@
 /******************** General ********************/
 :root{
-  
     --bleu-gradient-radial: radial-gradient(rgb(139,195,245),#2394b8);
     --gris-background-: rgb(247, 247, 247);
     --bleu-button-neutre:#2394b8 ;
@@ -12,7 +11,6 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-
     scroll-behavior: smooth;
 }
 
@@ -35,7 +33,6 @@ button{
     font-weight: light;
     font-size: 1.5em;
     color: gray;
-    
 }
 
 /*********** Back to the top Button **********/
@@ -58,23 +55,22 @@ button{
     height: 100%;
 }
 
-
 /********** Header **********/
 header{
-    height: 100px;
+    width: 100%;
+    height: 100%;
+
     display: flex;
     justify-content: center;
     align-items: center;
 
     color: white;
-    width: 100%;
 }
 
 h1 {
     font-size: 2.5em;
     flex: 1;
 }
-
 
 /********** nav **********/
 nav{
@@ -84,11 +80,9 @@ nav{
 }
 
 nav ul {
-   
     list-style: none;
     display: flex;
     justify-content: space-evenly;
- 
     width: 100%;
 }
 
@@ -96,6 +90,16 @@ nav ul li a {
     text-decoration: none;
     color: white;
     width: 100%;
+}
+
+/********** menuBurger **********/
+.navMenuBurger li {
+  overflow: hidden;
+}
+
+.iconClassBurger {
+    font-size: 1.2em ;
+    display: none;
 }
 
 /*********** homeSocials **********/
@@ -115,10 +119,8 @@ nav ul li a {
 }
 
 /********** homeContent **********/
-
 #homeContent{
     height: 95vh; 
-/*  1vh : 1% de la hauteur de l'écran // 95 car le navigateur prends de l'espace ce qui rends mieux visuellement   */ 
     width: 100%;
 
     display: flex;
@@ -138,7 +140,6 @@ nav ul li a {
     flex: 1.2;
 }
 
-
 /********** homeText **********/
 #homeText h2{  /* le padding permet au texte d'être légèrement plus bas que l'img et avoir un meilleur visuel */
     padding-top: 40px;
@@ -157,7 +158,6 @@ nav ul li a {
 }
 
 /********** form **********/
-
 #homeContent form{
     position: relative;
     max-width: 500px;
@@ -191,32 +191,31 @@ nav ul li a {
     transition: 0.3s;
 
     text-transform: uppercase;
- } 
+} 
 
- .submitEmail:hover{
+.submitEmail:hover{
     transition: 0.3s;
     background-color: var(--bleu-button-hover);
- }
+}
 
- .submitEmail:active{
+.submitEmail:active{
     transition: 0.3s;
     background-color: var(--bleu-button-active);
- }
+}
 
 /******************** Section Features ********************/
-
 #features{
     height: 1000px;
     padding: 0 8%;
 }
 
 .featuresText{
+    height: 50%;
+
     display: flex;
     flex-direction: column;
     justify-content: center;  
     align-items: center;
-
-    height: 50%;
 }
 
 .featuresText h2{
@@ -246,7 +245,6 @@ nav ul li a {
 /********** featuresContent **********/
 .featuresContent{ 
     height: 100%;
-
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -254,8 +252,7 @@ nav ul li a {
 
 .featuresDesign, 
 .featuresColors, 
-.featuresSolutions
-{
+.featuresSolutions{
     width: 450px;
     height: 450px;
 
@@ -288,7 +285,6 @@ nav ul li a {
     font-size: 3em;
     color: white;
     padding-bottom: 25px;
-
 }
 
 .featuresDesign h3,
@@ -304,7 +300,6 @@ nav ul li a {
     font-weight: lighter;
 }
 
-
 .featuresDesign:hover,
 .featuresColors:hover,
 .featuresSolutions:hover{
@@ -312,10 +307,8 @@ nav ul li a {
     bottom: 30px;
 }
 
-
 /******************** Section Work ********************/
 #work{
-    
     background-color:  rgb(247, 247, 247);
     text-align: center;
     height: 800px;
@@ -325,36 +318,31 @@ nav ul li a {
     height: 100%;
 }
 
-.work_text{
+.workText{
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.work_text h2{
+.workText h2{
     font-size: 3em;
     font-weight: bold;
-
 }
 
-.work_text p{
+.workText p{
     padding: 0 20%;
 }
 
 /******************** Section FAQ ********************/
 #faq{
-    padding: 5% 10%;
     height: 1000px;
-
+    padding: 5% 10%;
     display: flex;
     flex-direction: column;
-    
 }
 
-
 /********** faqText **********/
-
 #faqText{
     height: 100%;
     display: flex;
@@ -365,12 +353,10 @@ nav ul li a {
 #faqText h2 {
     text-align: center;
     padding: 0 25%;
-    
 }
 
 #faqText p{
     padding: 0 25%;
-    
 }
 
 /********** faqContent **********/
@@ -380,18 +366,14 @@ nav ul li a {
     justify-content: space-around;
 }
 
-
-
 /********** faqBloc  **********/
 .faqBloc{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly; 
-    
+
     text-align: center ;
-
 }
-
 
 /* Elements textes au dessus de <figure><img>  */
 #faqContent h3{ 
@@ -467,7 +449,6 @@ nav ul li a {
     align-items: center;
 }
 
-
 .faqOverlay:hover img{
     filter: grayscale(0%);
     scale: 1.5;
@@ -481,7 +462,6 @@ nav ul li a {
     left: 25px;
     transition: 0.3s;
 }
-
 
 /******************** Section Kucra ********************/
 #kucra{    
@@ -556,13 +536,11 @@ nav ul li a {
 #client{
     height: 800px;
     padding: 0 10%;
-
     background-color: var(--gris-background-);
 }
 
 #client article {
     height: 100%;
-
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -574,12 +552,10 @@ nav ul li a {
 
 #clientGalerie{
     padding: 0 7%;
-
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
 }
-
 
 .imgClient{
     width: 120px;
@@ -588,7 +564,7 @@ nav ul li a {
 }
 
 .imgClient:hover{
-    width: 160px;
+    scale: 1.6 ;
     opacity: 1;
     transition: 0.3s;
 }
@@ -668,7 +644,6 @@ nav ul li a {
 /********** figure **********/
 #about article figure{
     width: 45%;
-
 }
 
 #about article figure img{
@@ -676,12 +651,9 @@ nav ul li a {
 }
 
 /******************** Section Pricing ********************/
-
 #pricing{
     height: 1000px;
-
     background-color: var(--gris-background-);
-
     padding: 0 10%;
 }
 
@@ -697,7 +669,6 @@ nav ul li a {
 /***** pricingText *****/
 #pricingText{
     width: 100%;
-    
 }
 
 #pricingText p{
@@ -733,9 +704,13 @@ nav ul li a {
     transition: 0.3s ;
 }
 
-[class*="pricing-"]:hover{ /* affecte pricing-start/advanced/pro */ 
+[class*="pricing-"]:hover{ 
     bottom: 15px;
     transition: 0.3;
+}
+
+[class*="pricing-"] h3 {  /* affecte les titres Starter / Advanced / Professional */
+    text-align: center;
 }
 
 .pricingSales{
@@ -757,10 +732,6 @@ nav ul li a {
     text-align: center;
     color: white;
     line-height: 15px;
-}
-
-[class*="pricing-"] h3 {  /* affecte les tiitres Starter / Advanced / Professional */
-    text-align: center;
 }
 
 .pricingPrix{ /* sous titre : prix/month */
@@ -795,7 +766,6 @@ nav ul li a {
 }
 
 /********** Button **********/
-
 [class*="pricing-"] button { /* Join now */
     height: 40px;
     margin: 15px 0; 
@@ -811,24 +781,18 @@ nav ul li a {
     transition: 0.3s;
 }
 
-.pricing-start button:hover,
-.pricing-advanced button:hover,
-.pricing-pro button:hover{ /* hover premier et dernier bloc */
+[class*="pricing-"] button:hover{ /* hover premier et dernier bloc */
     background-color: var(--bleu-button-hover);
     border-color: var(--bleu-button-hover);
     color: white;
     transition: 0.3s;
 }
 
-.pricing-start button:active,
-.pricing-advanced button:active,
-.pricing-pro button:active{  /* clique premier et dernier bloc */
+[class*="pricing-"] button:active{  /* clique premier et dernier bloc */
     background-color:  var(--bleu-button-active);
     border-color: var(--bleu-button-active);
     transition: 0.3s;
 }
-
-
 
 /********** icon **********/
 .fa-circle-xmark{ /* icon faux */
@@ -867,6 +831,7 @@ nav ul li a {
 #blogText p{
     padding: 0 20%;
 }
+
 /********** blogContent **********/
 #blogContent{
     display: flex;
@@ -885,15 +850,14 @@ nav ul li a {
 }
 
 .blogBloc h3{
+    width: 100%;
     font-size: 1.7em;
     padding-top: 20px;
-    width: 100%;
 }
 
 .blogBloc p{
     width: 70%;
     padding: 20px 0;
-
     color: gray;
 }
 
@@ -902,7 +866,6 @@ nav ul li a {
     border-radius: 5px;
     width: 100%;
     vertical-align: bottom;
-
 }
 
 /********** HoverText *********/
@@ -951,10 +914,9 @@ nav ul li a {
 }
 
 /******************** Section Contact ********************/
-
 #contact{
-background-color: rgb(31, 31, 31);
-color: rgb(153, 153, 153);
+    background-color: rgb(31, 31, 31);
+    color: rgb(153, 153, 153);
 }
 
 footer{
@@ -987,7 +949,6 @@ footer{
     align-items: center;
 }
 
-
 .information{
     display: flex;
     justify-content: center;
@@ -1004,14 +965,10 @@ footer small{
     margin: 1em;
 }
 
-
-/**************************************** responsive ****************************************/
-
-
+/******************************************************************************** responsive ********************************************************************************/
 
 /**************************************** iPads ****************************************/
 @media only screen
-
 and (max-device-width : 1200px) {
 
 /******************** General ********************/
@@ -1025,16 +982,91 @@ and (max-device-width : 1200px) {
 
 /******************** section home ********************/
 #home{
-    padding: 0 4%;
+    height: fit-content;
+    padding: 4% 4%;
 }
 
 /********** Header **********/
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: initial;
+}
+
+.homeSocials{
+    padding: 15px 0;
+}
+
+.homeSocials a i{
+    font-size: 1.3em;
+}
+
+/********** nav **********/
+nav{
+    position: relative;
+}
+
+/********** menuBurger **********/
+.navMenuBurger :not(:first-child){
+    display: none;
+}
+
+.navMenuBurger{
+    position: relative;
+
+    display: flex;
+    justify-content: flex-start;
+}
+
+.navMenuBurger.responsive{
+    height: 450px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    background-color: var(--bleu-button-neutre);
+
+    border-radius: 15px;
+    position: absolute; /* absolute pour ne pas tout bouger */ 
+}
+
+.navMenuBurger.responsive li{    
+    width: 40%;
+    height: 100%;
+
+    padding-top: 15px;
+    padding-left: 15px;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.iconClassBurger {
+    display: block;
+    align-self: flex-start;
+    padding-top: 15px;
+    padding-left: 15px;
+    z-index: 10;
+}
+
+.iconClassBurger a{
+    color: white;
+}
 
 /********** homeContent **********/
 #homeContent{
+    height: fit-content;
+
     flex-direction: column-reverse;
     justify-content: flex-end;
     align-items: center;
+
+    padding: 15px 0;
 }
 
 #homeContent article{
@@ -1059,7 +1091,6 @@ and (max-device-width : 1200px) {
 }
 
 /********** form **********/
-
 #homeContent form{
     max-width: initial;
 }
@@ -1067,6 +1098,7 @@ and (max-device-width : 1200px) {
 #homeContent input{ /* texte sur le form  */
     height: 70px; /* bigger */
     border-radius: 20px;
+    font-size: 1.5em ;
 }
 
 .submitEmail{ /* button du form */
@@ -1076,8 +1108,8 @@ and (max-device-width : 1200px) {
 
 /******************** Section Features ********************/
 #features{
-    height: 1000px;
-    padding: 0;
+    height: fit-content;
+    padding: 35px 30px;
 }
 
 .featuresText{
@@ -1092,7 +1124,6 @@ and (max-device-width : 1200px) {
 /********** featuresContent **********/
 .featuresContent{ 
     width: 100%;
-
     flex-direction: column;
     justify-content: flex-start; /* center => this */ 
     align-items: center;
@@ -1100,8 +1131,7 @@ and (max-device-width : 1200px) {
 
 .featuresDesign, 
 .featuresColors, 
-.featuresSolutions
-{
+.featuresSolutions{
     width: 550px; /* bigger */
     height: fit-content; /* smaller */
     flex: 0; /* 1 => this  */
@@ -1134,20 +1164,24 @@ and (max-device-width : 1200px) {
 
 /******************** Section Work ********************/
 #work{
-    height: 500px;
+    height: fit-content;
+    padding: 35px 0;
 }
 
-.work_text p{
+.workText p{
     font-size: 1.5em;
-    padding: 0 ;
+    padding: 0 5%;
 }
 
 /******************** Section FAQ ********************/
 #faq{
-    padding: 5% 10%;
-    height: 1400px;
+    padding: 15px 35px;
+    height: fit-content;
 }
 
+#faqContent{
+    padding: 0 20%;
+}
 
 /********** faqText **********/
 #faqText h2 {
@@ -1164,26 +1198,24 @@ and (max-device-width : 1200px) {
     flex-wrap: wrap;
 }
 
-
 /********** faqBloc  **********/
 .faqBloc{
-    padding: 50px 0 ;
+    padding: 35px 15px ;
 }
 
-/* Elements textes en dessous de <figure><img>  */
 .faqBloc figure img{
-    height: 200px; /* smaller */
+    height: 200px; 
     width: 200px;
 }
 
 .faqOverlay{
-    width:200px; /* smaller */
+    width:200px; 
     height:200px;
 }
 
 .faqSocials{
-    opacity: 1; /* always visible */
-    bottom: 30px; /* lower */
+    opacity: 1;
+    bottom: 30px; 
     left: 25px;
 }
 
@@ -1195,8 +1227,14 @@ and (max-device-width : 1200px) {
 /******************** Section Kucra ********************/
 #kucra{    
     width: 100%;
-    height: 600px;
+    height: fit-content;
+
+    background-image:none;
     background-position:80%;
+}
+
+#kucra article{    
+    padding: 35px 0;
 }
 
 #kucraBackground{ 
@@ -1204,25 +1242,31 @@ and (max-device-width : 1200px) {
 }
 
 #kucra p{
-    padding: 0 5%;
+    padding: 0 15px;
 }
 
 #btnKucra{    
     height: 70px;
+    margin: 25px 0 0 0;
 }
-
 
 /******************** Section Client ********************/
 #client{
+    height: fit-content;
     padding: 0 5%;
+}
+
+
+#clientText h2{
+    padding: 35px 0;
 }
 
 #clientText p{
-    padding: 0 5%;
+    padding: 0 15px;
 }
 
 #clientGalerie{
-    padding: 0;
+    padding: 35px 15px;
     flex-direction: row;
     flex-wrap: wrap;
 }
@@ -1232,10 +1276,9 @@ and (max-device-width : 1200px) {
 }
 
 /******************** Section About ********************/
-
 #about{
-    height: 600px;
-    padding: 8% 4%;
+    height: fit-content;
+    padding: 35px 15px;
 }
 
 #about article{
@@ -1282,12 +1325,14 @@ and (max-device-width : 1200px) {
 #aboutContent button{
     width: 70%;
     height: 65px;
+
+    margin-bottom: 15px;
 }
 
 /******************** Section Pricing ********************/
 #pricing{
-    height: 1800px;
-    padding: 0 5%;
+    height: fit-content;
+    padding: 35px 15px;
 }
 
 #pricing article{
@@ -1309,7 +1354,6 @@ and (max-device-width : 1200px) {
 /***** pricingText *****/
 #pricingText{
     width: 100%;
-    
 }
 
 #pricingText p{
@@ -1319,12 +1363,12 @@ and (max-device-width : 1200px) {
 [class*="pricing-"]{ /* affecte pricing-start/advanced/pro */ 
     width: 450px;
     height: 450px ;
-    margin: 50px 10px;
+    margin: 20px 10px;
 }
 
 /******************** Section Blog ********************/
 #blog{
-    height: 2000px;
+    height: fit-content;
     padding: 0 5%;
 }
 
@@ -1352,7 +1396,7 @@ and (max-device-width : 1200px) {
 
 /***** blogBloc *****/
 .blogBloc{
-    margin: 50px 10px;
+    margin: 25px 10px;
     justify-content: center;
     align-items: center;
 }
@@ -1375,7 +1419,6 @@ and (max-device-width : 1200px) {
 }
 
 /********** HoverText *********/
-
 .blogHoverText{
     width:0%;
     height: 0%;
@@ -1386,20 +1429,287 @@ and (max-device-width : 1200px) {
     width: 100%;
     padding: 0 10% ;
 }
+
 .blogBloc img{
     width: 100%;
 }
 
-
 }
 
 /**************************************** Smartphones ****************************************/
-
 @media only screen
 and (max-device-width : 645px) {
 
+/******************** General ********************/
+.soustitreSection{
+    padding: 0 15px;
+}
+
+/*********** Back to the top Button **********/
+#topScroll{ 
+    top: 50px;
+    bottom: initial;
+    font-size: 2em;
+    z-index: 99;
+}
+
+/******************** section home ********************/
+#home{
+    padding: 1% 0 ;
+    height: fit-content;
+    width: 100%;
+}
+
+/********** Header **********/
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: initial;
+}
+
+h1{
+    display: none;
+}
+
+.homeSocials a i{
+    font-size: 1.2em;
+}
+
+/********** nav **********/
+nav{
+    position: relative;
+}
+
+/********** menuBurger **********/
+.navMenuBurger :not(:first-child){
+    display: none;
+}
+
+.navMenuBurger{
+    height: 0;
+    justify-content: initial;
+}
+
+.navMenuBurger.responsive{
+    align-items: flex-start; /* align left */ 
+    background-color: var(--bleu-button-hover);
+    z-index: 99; 
+}
+
+.navMenuBurger.responsive li{    
+    text-align: left;
+    padding-top: 15px;
+    padding-left:  15px;
+}
+
+.iconClassBurger {
+    padding-top: 15px;
+    padding-left: 15px;
+    align-self: flex-start;
+}
+
+/********** homeContent **********/
+#homeContent{
+    height: fit-content;
+    padding: 0 15px 35px;
+
+}
+
+#homeContent figure {
+    display: none;
+}
+
+/********** homeText **********/
+#homeText h2{  
+    font-size: 3.5em; /* smaller */
+    text-align: center;
+    padding-top: 0;
+}
+
+#homeText p{
+    max-width: initial; /* removed limit */
+    text-align: center; 
+}
+
+/********** form **********/
+
+#homeContent form{
+    max-width: initial;
+}
+
+#homeContent input{ /* texte sur le form  */
+    height: 60px; /* bigger */
+    border-radius: 20px;
+    font-size: 1em ;
+}
+
+.submitEmail{ /* button du form */
+    height: 50px; /* bigger */
+    border-radius: 15px;
+} 
+
+/******************** Section Features ********************/
+#features{
+    height: fit-content;
+    padding: 35px 0;
+}
+
+.featuresText h2{
+    font-size: 2.7em;
+    padding: 0 15px;
+}
+
+.featuresDesign, 
+.featuresColors, 
+.featuresSolutions{
+    width: 100%;
+}
+
+/******************** Section Work ********************/
+#work{
+    height: fit-content;
+    padding: 35px 15px;
+}
+
+.workText p{
+    font-size: 1.5em;
+    padding: 0;
+}
+
+/******************** Section FAQ ********************/
+#faq{
+    padding: 35px 1% 0;
+    height: fit-content;
+}
+
+#faqContent{
+    padding: 0 10%;
+}
+
+/********** faqText **********/
+#faqText{
+    justify-content: space-evenly;
+}
+
+#faqText h2 {
+    padding: 0 20px 35px;
+    font-size: 2.4em;
+    text-align: center;
+}
+
+#faqText p{
+    padding: 0 15px;
+}
+
+.faqBloc{
+    padding: 0;
+    margin: 25px 0;
+}
+
+/******************** Section Kucra ********************/
+#kucra{
+    height: fit-content;
+}
+
+#kucra h2{
+    padding: 0 15px 20px;
+}
+
+#kucra p{
+    padding: 0 15px 20px;
+}
+
+/******************** Section Client ********************/
+#client{
+    height: fit-content;
+    padding: 35px 0;
+}
+
+#client h2{
+    padding: 0 0 35px;
+}
+
+#clientGalerie{
+    padding: 25px 15px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.imgClient{
+    width: 100px;
+}
+
+/******************** Section About ********************/
+#about{
+    height: fit-content;
+    padding: 35px 15px;
+}
+
+.aboutBloc{
+    padding: 25px 0;
+}
 
 
+/******************** Section Pricing ********************/
+#pricing{
+    height: fit-content;
+    padding: 20px 15px ;
+}
 
+[class*="pricing-"]{ /* affecte pricing-start/advanced/pro */ 
+    width: 100%;
+    margin: 15px 0;
+}
+
+#pricingText p{
+    padding: 0 15px;
+}
+
+
+/******************** Section Blog ********************/
+#blog{
+    height: fit-content; /* bigger */ 
+    padding: 0 1%; /* smaller */
+}
+
+/********** article **********/
+#blogText h2{
+    padding: 35px 0;
+}
+
+#blogText p{
+    padding: 0 15px;
+}
+
+/********** blogContent **********/
+
+/***** blogBloc *****/
+
+/********** HoverText *********/
+.blogHoverText{
+    display: none;
+}
+
+/***** img *****/
+.blogBloc {
+    width: 100%;
+    margin: 15px 0;
+    padding: 0 15px ;
+}
+
+
+.blogBloc figure {
+    width: 100%;
+    padding: 0 ;
+}
+
+/******************** footer ********************/
+.information a,.information p{
+    color:rgb(153, 153, 153);
+    text-decoration: none;
+    margin: 0.2em;
+}
 
 }
