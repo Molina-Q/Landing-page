@@ -601,7 +601,6 @@ nav ul li a {
 .aboutBloc{ 
     width: 40%;
     padding: 40px 0;
-
     display: flex;
     justify-content: space-between;
 }
@@ -622,7 +621,7 @@ nav ul li a {
     
     border: 0;
     border-radius: 5px;
-
+    
     background-color: var(--bleu-button-neutre) ;
 
     color: white;
@@ -660,7 +659,6 @@ nav ul li a {
 #pricing article{
     width: 100%;
     height: 100%;
-
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -682,7 +680,9 @@ nav ul li a {
     justify-content: center;
 }
 
-[class*="pricing-"]{ /* affecte pricing-start/advanced/pro */ 
+#pricingStart, 
+#pricingAdv, 
+#pricingPro{ /* affecte pricingStart/advanced/pro */ 
     width: 325px;
     height: 450px ;
 
@@ -704,30 +704,45 @@ nav ul li a {
     transition: 0.3s ;
 }
 
-[class*="pricing-"]:hover{ 
+#pricingStart:hover, 
+#pricingAdv:hover, 
+#pricingPro:hover{ 
     bottom: 15px;
     transition: 0.3;
 }
 
-[class*="pricing-"] h3 {  /* affecte les titres Starter / Advanced / Professional */
+#pricingStart h3, 
+#pricingAdv h3, 
+#pricingPro h3 {  /* affecte les titres Starter / Advanced / Professional */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    z-index: 10;
+}
+
+#pricingStart h3 i,
+#pricingAdv h3 i, 
+#pricingPro h3 i{ 
+    font-size: 1em;
+    padding: 0 5px;
     text-align: center;
 }
 
 .pricingSales{
     width: 50px;
     height: 50px;
-
     padding: 8px 0;
 
     background-color: #2394b8;
 
     position: absolute;
+    top: 0px;
+    right: 0px;
 
     border-bottom-left-radius:25%;
     border-top-right-radius:25%;
-
-    top: 0px;
-    right: 0px;
 
     text-align: center;
     color: white;
@@ -744,31 +759,40 @@ nav ul li a {
     font-size: 3em;
 }
 
-.pricingPrix sup{ /* le dollar, lui permet d'être surélevé */
+.pricingPrix sup{ /* le symbole dollar, lui permet d'être surélevé */
     color:#2394b8;
     font-size: 30px ;
 }
 
-[class*="pricing-"] ul {  /* aligne verticalement les <li> et mets de l'espace entre eux */
-    height: 40%;
+#pricingStart .pricingDropdownContent ul, 
+#pricingAdv .pricingDropdownContent ul, 
+#pricingPro .pricingDropdownContent ul {  /* aligne verticalement les <li> et mets de l'espace entre eux */
+    height: 200px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-.pricing-start ul li,
-.pricing-advanced ul li,
-.pricing-pro ul li{  /* aligne horizontalement les deux <p> des <li> */
+#pricingStart ul li,
+#pricingAdv ul li,
+#pricingPro ul li{  /* aligne horizontalement les deux <p> des <li> */
     list-style: none;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
+.pricingDropdownContent{ /* div avec la liste et le btn */
+ height: fit-content;
+}
+
 /********** Button **********/
-[class*="pricing-"] button { /* Join now */
+#pricingStart .pricingDropdownContent button,
+#pricingAdv .pricingDropdownContent button, 
+#pricingPro .pricingDropdownContent button { /* Join now */
     height: 40px;
     margin: 15px 0; 
+    width: 100%;
     padding: 5px;
 
     background-color: white;
@@ -781,14 +805,18 @@ nav ul li a {
     transition: 0.3s;
 }
 
-[class*="pricing-"] button:hover{ /* hover premier et dernier bloc */
+#pricingStart .pricingDropdownContent button:hover,
+#pricingAdv .pricingDropdownContent button:hover, 
+#pricingPro .pricingDropdownContent button:hover{ /* hover premier et dernier bloc */
     background-color: var(--bleu-button-hover);
     border-color: var(--bleu-button-hover);
     color: white;
     transition: 0.3s;
 }
 
-[class*="pricing-"] button:active{  /* clique premier et dernier bloc */
+#pricingStart .pricingDropdownContent button:active,
+#pricingAdv .pricingDropdownContent button:active, 
+#pricingPro .pricingDropdownContent button:active{  /* clique premier et dernier bloc */
     background-color:  var(--bleu-button-active);
     border-color: var(--bleu-button-active);
     transition: 0.3s;
@@ -803,10 +831,19 @@ nav ul li a {
     color: rgb(0, 71, 0);
 }
 
+.fa-circle-chevron-down{
+    display: none;
+}
+
+.fa-circle-chevron-up{
+    display: none;
+}
+
 #pricing ul li p i{ /* attributs des balises <i> */
     font-size: 1.2em;
     padding: 0 3px;
 }
+
 
 /******************** Section Blog ********************/
 #blog{
@@ -859,7 +896,14 @@ nav ul li a {
     width: 70%;
     padding: 20px 0;
     color: gray;
+    text-align: left;
+    padding: 15px 0 10px;
 }
+
+.blogBloc a{
+    text-decoration: none;
+}
+
 
 /***** img *****/
 .blogBloc img{
@@ -904,14 +948,6 @@ nav ul li a {
     padding: 0;
 }
 
-/***** paragraphe *****/
-.blogBloc p{
-    text-align: left;
-}
-
-.blogBloc a{
-    text-decoration: none;
-}
 
 /******************** Section Contact ********************/
 #contact{
@@ -983,7 +1019,7 @@ and (max-device-width : 1200px) {
 /******************** section home ********************/
 #home{
     height: fit-content;
-    padding: 4% 4%;
+    padding: 10px 4%;
 }
 
 /********** Header **********/
@@ -1005,18 +1041,13 @@ header{
 /********** nav **********/
 nav{
     position: relative;
+
 }
 
 /********** menuBurger **********/
-.navMenuBurger :not(:first-child){
+.navMenuBurger {
     display: none;
-}
-
-.navMenuBurger{
     position: relative;
-
-    display: flex;
-    justify-content: flex-start;
 }
 
 .navMenuBurger.responsive{
@@ -1027,7 +1058,7 @@ nav{
     justify-content: space-between;
     align-items: flex-start;
 
-    background-color: var(--bleu-button-neutre);
+    background-color: white;
 
     border-radius: 15px;
     position: absolute; /* absolute pour ne pas tout bouger */ 
@@ -1046,6 +1077,15 @@ nav{
     text-align: left;
 }
 
+.navMenuBurger.responsive li:not(:last-child){
+    border-bottom: 1px solid lightgray;
+    width: 100%;
+}
+
+.navMenuBurger li a{    
+    color: var(--bleu-button-neutre);
+}
+
 .iconClassBurger {
     display: block;
     align-self: flex-start;
@@ -1056,6 +1096,15 @@ nav{
 
 .iconClassBurger a{
     color: white;
+}
+
+/***** animation *****/
+#iconBurgerSwap,
+#iconBurgerSwap::before,
+#iconBurgerSwap::after {
+
+transition: 0.3s;
+
 }
 
 /********** homeContent **********/
@@ -1180,7 +1229,7 @@ nav{
 }
 
 #faqContent{
-    padding: 0 20%;
+    padding: 0 10%;
 }
 
 /********** faqText **********/
@@ -1298,6 +1347,7 @@ nav{
 /********** aboutText **********/
 .aboutText h2{
     text-align: center;
+    font-size: 3em;
 }
 
 .aboutText p{
@@ -1360,10 +1410,51 @@ nav{
     padding: 0 10% ;
 }
 
-[class*="pricing-"]{ /* affecte pricing-start/advanced/pro */ 
+/********** pricing drop menu **********/
+
+.pricingEventBtn {
+    padding: 16px;
+    cursor: pointer;
+}
+
+#pricingStart,
+#pricingAdv, 
+#pricingPro{
+    display: block;
+}
+/***** changement de taille du fonds *****/ 
+#pricingContent .pricingBackgroundFold{ 
     width: 450px;
-    height: 450px ;
+    height: 140px ;
     margin: 20px 10px;
+    transition: 0.3s ease-in;
+}
+
+#pricingContent .pricingBackgroundFold.unfold{
+    height: 450px;
+    transition: 0.3s ease-out;
+}
+
+/***** disparition/apparation du contentu *****/
+.pricingDropdownContent{
+    display: none;
+}
+
+.pricingDropdownContent.show {   
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    height: calc(100% - 100px);
+}
+
+/***** icon *****/
+.fa-circle-chevron-down{
+    display: initial;
+}
+
+.fa-circle-chevron-up{
+    display: initial;
 }
 
 /******************** Section Blog ********************/
@@ -1383,7 +1474,7 @@ nav{
 }
 
 #blogText p{
-    padding: 0 5%;
+    padding: 0 15px;
 }
 
 /********** blogContent **********/
@@ -1482,7 +1573,7 @@ nav{
 }
 
 /********** menuBurger **********/
-.navMenuBurger :not(:first-child){
+.navMenuBurger{
     display: none;
 }
 
@@ -1493,8 +1584,10 @@ nav{
 
 .navMenuBurger.responsive{
     align-items: flex-start; /* align left */ 
-    background-color: var(--bleu-button-hover);
     z-index: 99; 
+    border-top-left-radius: 0 ;
+    border-bottom-left-radius: 0 ;
+
 }
 
 .navMenuBurger.responsive li{    
@@ -1651,6 +1744,11 @@ nav{
     padding: 25px 0;
 }
 
+.aboutText h2{
+    text-align: center;
+    font-size: 3em;
+}
+
 
 /******************** Section Pricing ********************/
 #pricing{
@@ -1658,8 +1756,9 @@ nav{
     padding: 20px 15px ;
 }
 
-[class*="pricing-"]{ /* affecte pricing-start/advanced/pro */ 
-    width: 100%;
+#pricingStart, 
+#pricingAdv, 
+#pricingPro{ /* affecte pricingStart/advanced/pro */ 
     margin: 15px 0;
 }
 
@@ -1667,6 +1766,9 @@ nav{
     padding: 0 15px;
 }
 
+#pricingContent .pricingBackgroundFold{
+    width: 100%;
+} 
 
 /******************** Section Blog ********************/
 #blog{

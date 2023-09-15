@@ -8,7 +8,7 @@
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/brands.min.css" integrity="sha512-W/zrbCncQnky/EzL+/AYwTtosvrM+YG/V6piQLSe2HuKS6cmbw89kjYkp3tWFn1dkWV7L1ruvJyKbLz73Vlgfg==" crossorigin="anonymous" referrerpolicy="no-referrer" /> --> <!-- brands n'as pas mes icons "brands" -->
     <link rel="stylesheet" href="./css/style.css" />
 
-    <title>Landing site</title>
+    <title>Landing page</title>
 </head>
 
 <body>
@@ -19,15 +19,18 @@
     <section id="home">
         <header>
             <h1>Kucra</h1>
-            <nav>
+
+
+            <nav> 
+                <p class="iconClassBurger">  
+                    <a href="#" id="iconBurger">
+                        <i id="iconBurgerSwap" class="fa-solid fa-bars"></i>
+                    </a>
+                </p>
+
                 <ul class="navMenuBurger" id="navBurger">
 
-                    <li class="iconClassBurger">  
-                        <a href="#" id="iconBurger">
-                            <i class="fa fa-bars"></i>
-                        </a>
-                    </li>
-
+                   
                     <li><a href="#home">HOME</a></li>
 
                     <li><a href="#features">FEATURES</a></li>
@@ -330,112 +333,142 @@
 
             <article>
                 <div id="pricingText">
-                    <h2 class="titreSection">Our Princing</h2>
+                    <h2 class="titreSection">Our Pricing</h2>
                     <p class="soustitreSection">It is a long established fact that a reader will be of a page when established fact lookin at its layout.</p>
                 </div>
 
                 <div id="pricingContent">
 
-                    <div class="pricing-start">
-                        <h3>Starter</h3>
+                    <div id="pricingStart" class="pricingBackgroundFold">
+
+                        <h3 id="pricingDropDownStart" class="pricingEventBtn">
+                            Starter
+                            <i id="pricingArrowStart" class="fa-solid fa-circle-chevron-down"></i>
+                        </h3>
                         <p class="pricingPrix"><span><sup>$</sup>9</span>/month</p>
-                        <ul>
-                            <li>
-                                <p><i class="fa-regular fa-circle-check"></i>Bandwidth</p>
-                                <p>1GB</p>
-                            </li>
-                            <li>
-                                <p><i class="fa-regular fa-circle-check"></i>Onlinespace </p>
-                                <p>500MB</p>
-                            </li>
-                            <li>
-                               <p><i class="fa-regular fa-circle-xmark"></i>Support:No</i></p> 
-                               <p>No</p>
+                                                
+                        <div id="pricingDropContentStart" class="pricingDropdownContent">
 
-                            </li>
-                            <li>
-                                <p><i class="fa-regular fa-circle-check"></i>Domain</p>
-                                <p>1</p>
-
-                            </li>
-                            <li>
-                                <p><i class="fa-regular fa-circle-xmark"></i></i>Hidden Fees</p>
+                            <ul>
+                                <li>
+                                    <p><i class="fa-regular fa-circle-check"></i>Bandwidth</p>
+                                    <p>1GB</p>
+                                </li>
+                                <li>
+                                    <p><i class="fa-regular fa-circle-check"></i>Onlinespace </p>
+                                    <p>500MB</p>
+                                </li>
+                                <li>
+                                <p><i class="fa-regular fa-circle-xmark"></i>Support:No</i></p> 
                                 <p>No</p>
 
-                            </li>
-                        </ul>
-                        <button>Join Now</button>
+                                </li>
+                                <li>
+                                    <p><i class="fa-regular fa-circle-check"></i>Domain</p>
+                                    <p>1</p>
+
+                                </li>
+                                <li>
+                                    <p><i class="fa-regular fa-circle-xmark"></i></i>Hidden Fees</p>
+                                    <p>No</p>
+
+                                </li>
+                            </ul>
+
+                            <button>Join Now</button>
+
+                        </div>
                     </div>
 
-                    <div class="pricing-advanced">
+                    <div id="pricingAdv" class="pricingBackgroundFold">
+
                         <div class="pricingSales">
                             <p>20% sale</p>
                         </div>
 
-                        <h3>Advanced</h3>
+                        <h3 id="pricingDropDownAdv" class="pricingEventBtn">
+                            Advanced
+                            <i id="pricingArrowAdv" class="fa-solid fa-circle-chevron-down"></i>
+                        </h3>
+
                         <p class="pricingPrix"><span><sup>$</sup>19</span>/month</p>
-                        
-                        <ul>
-                            <li>
-                                <p><i class="fa-regular fa-circle-check"></i>Bandwidth</p>
-                                <p>2GB</p>
 
-                            </li>
-                            <li>
-                                <p><i class="fa-regular fa-circle-check"></i>Onlinespace</p>
-                                <p>1GB</p>
+                        <div id="pricingDropContentAdv" class="pricingDropdownContent">
 
-                            </li>
-                            <li>
-                                <p><i class="fa-regular fa-circle-check"></i>Support:No</p>
-                                <p>Yes</p>
+                            <ul>
 
-                            </li>
-                            <li>
-                                <p><i class="fa-regular fa-circle-check"></i>Domain</p>
-                                <p>3</p>
+                                <li>
+                                    <p><i class="fa-regular fa-circle-check"></i>Bandwidth</p>
+                                    <p>2GB</p>
 
-                            </li>
-                            <li>
-                                <p><i class="fa-regular fa-circle-check"></i>Hidden Fees</p>
-                                <p>No</p>
+                                </li>
+                                <li>
+                                    <p><i class="fa-regular fa-circle-check"></i>Onlinespace</p>
+                                    <p>1GB</p>
 
-                            </li>
-                        </ul>
-                        <button>Join Now</button>
+                                </li>
+                                <li>
+                                    <p><i class="fa-regular fa-circle-check"></i>Support:No</p>
+                                    <p>Yes</p>
+
+                                </li>
+                                <li>
+                                    <p><i class="fa-regular fa-circle-check"></i>Domain</p>
+                                    <p>3</p>
+
+                                </li>
+                                <li>
+                                    <p><i class="fa-regular fa-circle-check"></i>Hidden Fees</p>
+                                    <p>No</p>
+
+                                </li>
+
+                            </ul>
+
+                            <button>Join Now</button>
+
+                        </div>
                     </div>
 
-                    <div class="pricing-pro">
-                        <h3>Professional</h3>
+                    <div id="pricingPro" class="pricingBackgroundFold">
+
+                        <h3 id="pricingDropDownPro" class="pricingEventBtn">
+                            Professional
+                            <i id="pricingArrowPro" class="fa-solid fa-circle-chevron-down"></i>
+                        </h3>
+
                         <p class="pricingPrix"><span><sup>$</sup>29</span>/month</p>
-                        <ul>
-                            <li>
-                                <p><i class="fa-regular fa-circle-check"></i>Bandwidth</p>
-                                <p>1GB</p>
-                            </li>
-                            <li>
-                                <p><i class="fa-regular fa-circle-check"></i>Onlinespace</p>
-                                <p>500MB</p>
-                            </li>
-                            <li>
-                                <p><i class="fa-regular fa-circle-check"></i>Support:No</p>
-                                <p>No</p>
-                                
-                            </li>
-                            <li>
-                                <p><i class="fa-regular fa-circle-check"></i>Domain</p>
-                                <p>1</p>
-                                
-                            </li>
-                            <li>
-                                <p><i class="fa-regular fa-circle-check"></i>Hidden Fees</p>
-                                <p>No</p>
-                            </li>
-                        </ul>
-                        <button>Join Now</button>
 
+                        <div id="pricingDropContentPro" class="pricingDropdownContent">
+
+                            <ul>
+                                <li>
+                                    <p><i class="fa-regular fa-circle-check"></i>Bandwidth</p>
+                                    <p>1GB</p>
+                                </li>
+                                <li>
+                                    <p><i class="fa-regular fa-circle-check"></i>Onlinespace</p>
+                                    <p>500MB</p>
+                                </li>
+                                <li>
+                                    <p><i class="fa-regular fa-circle-check"></i>Support:No</p>
+                                    <p>No</p>
+                                    
+                                </li>
+                                <li>
+                                    <p><i class="fa-regular fa-circle-check"></i>Domain</p>
+                                    <p>1</p>
+                                    
+                                </li>
+                                <li>
+                                    <p><i class="fa-regular fa-circle-check"></i>Hidden Fees</p>
+                                    <p>No</p>
+                                </li>
+                            </ul>
+
+                            <button>Join Now</button>
+                        </div>
                     </div>
-
                 </div>
                 
             </article>
@@ -460,7 +493,7 @@
                             </div>
 
                             <figure>
-                                <img src="./img/blog3.png" alt="grande salle avec des gens">
+                                <img src="./img/blog3.png" alt="grande salle avec des personnes">
                             </figure>
                         </div>
                         <h3>Doing a cross country road trip</h3>
