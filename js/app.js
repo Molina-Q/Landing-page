@@ -31,13 +31,101 @@ function togglePricingMenu(pricingDropContentPricingLevel, pricingBoxLevel, idIc
     swapArrowIconById(idIconPricingArrowLevel);
 }
 
+
+
+/* config couleurs par défaut
+    --color-primary: var(#2394b8);
+    --color-primary-gradient: var(rgb(139,195,245));
+    --color-secondary: var(#006c8a);
+*/
+// function toggleColorTheme(themeColor) {
+//     document.getElementById("home").classList.toggle(themeColor)
+// }
+
+const themeColors = [
+    // blue
+    {
+        name: "Blue",
+        primary: "#2394b8",
+        primaryGradient: "rgb(139,195,245)",
+        secondary: "#006c8a",
+        tertiary: "#2db1da"
+    },
+    // red
+    {
+        name: "Red",
+        primary: "#b82323",
+        primaryGradient: "rgb(245, 139, 139)",
+        secondary: "#7c1818",
+        tertiary: "#e02a2a"
+    },
+    // green
+    {
+        name: "Green",
+        primary: "#23b823",
+        primaryGradient: "rgb(181, 245, 139)",
+        secondary: "#126112",
+        tertiary: "#2ce42c"
+    },
+    // purple
+    {
+        name: "Purple",
+        primary: "#8e23b8",
+        primaryGradient: "rgb(220, 139, 245)",
+        secondary: "#45115a",
+        tertiary: "#ad2ae0"
+    }
+];
+
+
+function setColorTheme(themeColor) {
+    // console.log("themeColor = ", themeColor);
+    const rootElement = document.querySelector(":root"); // équivalent à : document.documentElement
+    // console.log("rootElement = ", rootElement);
+    
+    // const rootComputedStyle = getComputedStyle(rootElement);
+    // console.log(rootComputedStyle.getPropertyValue("--color-primary"));
+    
+    rootElement.style.setProperty("--color-primary", `${themeColor.primary}`); // interpolation 
+    rootElement.style.setProperty("--color-primary-gradient", `${themeColor.primaryGradient}`);
+    rootElement.style.setProperty("--color-secondary", `${themeColor.secondary}`);
+    rootElement.style.setProperty("--color-tertiary", `${themeColor.tertiary}`);
+
+    // `${}` permet de selectionner n'importe quel élément en dehors de la fonction
+
+    // console.log(rootComputedStyle.getPropertyValue("--color-primary"));
+}
+
+
+themeColors.forEach((themeColor) =>
+    document.getElementById("gearTheme" + themeColor.name).addEventListener("click", () =>
+        setColorTheme(themeColor)
+    )
+);
+
+
+// function toggleColorTheme(themeColor) {
+//     const toggleColorThemeNow = document.getElementsByClassName("themeColorChangeBackImg");
+
+//     for (let i = 0; i < toggleColorThemeNow.length; i++) {
+//         const openColorThemeNow = toggleColorThemeNow[i];
+//         openColorThemeNow.classList.toggle(themeColor);
+//     }
+// }
+
+
 /* btn menu burger sur la nav */
 document.getElementById("iconBurger").addEventListener("click", toggleTopnavResponsive);
 
-/* dropdown menu pricing */
-// document.getElementById("pricingDropDownStart").addEventListener("click", () => togglePricingMenu("pricingDropContentStart","pricingStart","pricingArrowStart") );
-// document.getElementById("pricingDropDownAdv").addEventListener("click", () => togglePricingMenu("pricingDropContentAdv","pricingAdv","pricingArrowAdv") );
-// document.getElementById("pricingDropDownPro").addEventListener("click", () => togglePricingMenu("pricingDropContentPro","pricingPro","pricingArrowPro") );
+/* change la couleur en fonction du clique sur les carrés de gear */
+// const mainThemeColor = ["Red", "Green", "Purple"];
+// mainThemeColor.forEach((colorChoice) =>
+//     document.getElementById("gearTheme" + colorChoice).addEventListener("click", () =>
+//         toggleColorTheme("themeIs" + colorChoice)
+//     )
+// );
+
+
 
 const pricingLevels = ["Start", "Adv", "Pro"];
 pricingLevels.forEach((level) =>
@@ -45,33 +133,6 @@ pricingLevels.forEach((level) =>
         togglePricingMenu("pricingDropContent" + level, "pricing" + level, "pricingArrow" + level)
     )
 );
-
-
-/* permet de replier les menu déroulant en cliquant n'importe ou dans la fenetre  */
-// window.addEventListener("click", function(event) {
-//     if (!event.target.matches('.pricingEventBtn')) {
-//       const dropdowns = document.getElementsByClassName("pricingDropdownContent");
-//       for (let i = 0; i < dropdowns.length; i++) {
-//         var openDropdown = dropdowns[i];
-//         if (openDropdown.classList.contains('show')) {
-//           openDropdown.classList.remove('show');
-//           swapArrowIcon();
-//         }
-//       }
-//     }
-// })
-
-// window.addEventListener("click", function(event) {
-//     if (!event.target.matches('.pricingEventBtn')) {
-//       const dropdowns = document.getElementsByClassName("pricingBackgroundFold");
-//       for (let i = 0; i < dropdowns.length; i++) {
-//         var openDropdown = dropdowns[i];
-//         if (openDropdown.classList.contains('unfold')) {
-//           openDropdown.classList.remove('unfold');
-//         }
-//       }
-//     }
-// })
 
 const initDropdownParams = [
     // dropdown content
@@ -105,18 +166,3 @@ initDropdownParams.forEach((dropdownParam) => /* dropdownParam as value */
 
 
 
- // if (openDropdown.classList.contains(dropdownParam.SwapArrowIconPosition)) {
-                    //     openDropdown.classList.replace("fa-circle-chevron-down")
-                    // }
-// window.onclick = function(event) {
-//   if (!event.target.matches('.pricingEventBtn')) {
-//     var dropdowns = document.getElementsByClassName("pricingDropdownContent");
-//     var i;
-//     for (i = 0; i < dropdowns.length; i++) {
-//       var openDropdown = dropdowns[i];
-//       if (openDropdown.classList.contains('show')) {
-//         openDropdown.classList.remove('show');
-//       }
-//     }
-//   }
-// }
