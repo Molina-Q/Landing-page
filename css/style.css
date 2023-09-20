@@ -1,30 +1,51 @@
 /******************** General ********************/
 :root {
     --blue-gradient-radial: radial-gradient(rgb(139,195,245),#2394b8);
-    --red-gradient-radial: radial-gradient(rgb(245, 139, 139),#b82323);
+    --red-gradient-radial: radial-gradient(rgb(245, 139, 139),rgb(184, 35, 35));
     --green-gradient-radial: radial-gradient(rgb(181, 245, 139),#23b823);
     --purple-gradient-radial: radial-gradient(rgb(220, 139, 245),#8e23b8);
 
     --gris-background: rgb(247, 247, 247);
 
     --blue-button-neutre:#2394b8;
-    --red-button-neutre:#b82323;
-    --green-button-neutre:#23b823;
-    --purple-button-neutre:#8e23b8;
+    --color-primary-gradient: rgb(139,195,245); 
+    --blue-button-hover:rgb(45, 177, 218);  
+    --blue-button-active:rgb(0, 108, 138);
 
-    --blue-button-hover:#2db1da;
-    --red-button-neutre:#e02a2a;
-    --green-button-neutre:#2ce42c;
-    --purple-button-neutre:#ad2ae0;
+    --red-button-neutre:rgb(184, 35, 35);
+
+
+    --green-button-neutre:rgb(35, 184, 35);
+
+    
+    --purple-button-neutre:rgb(142, 35, 184);
+
+    
+
+    --red-button-hover:rgb(224, 42, 42);
+
+    --green-button-hover:rgb(44, 228, 44);
+
+    --purple-button-hover:rgb(173, 42, 224);
+
+  
+
+    --red-button-active:rgb(129, 24, 24);
+
+    --green-button-active:rgb(25, 124, 25);
+
+    --purple-button-active:rgb(84, 20, 109);
     
     --gris-font-home: rgb(56, 56, 56);
 
     /* config couleurs par défaut */
-    --color-primary: #2394b8;
-    --color-primary-gradient: rgb(139,195,245);
-    --color-secondary: #006c8a;
-    --color-tertiary:#2db1da;
+    --color-primary: rgb(35, 148, 184);
+    --color-primary-gradient: rgb(139,195,245);   
+    --color-secondary:rgb(45, 177, 218);
+    --color-tertiary: rgb(0, 108, 138);
+
     --gradient-radial-primary: radial-gradient(var(--color-primary-gradient), var(--color-primary));
+    --gradient-radial-secondary: radial-gradient(rgb(220, 139, 245),#8e23b8);
 
 }
 
@@ -58,25 +79,14 @@ button{
 
 /********** Color theme **********/
 .themeColorChangeBackImg{  /* class qui affecte les background-img utilisant le gradient radial : #home, .featuresD/C/S,  */
-    background: var(--gradient-radial-primary);
+
 }
 
-/* .themeColorChangeBackImg.themeIsRed{
-    background: var(--red-gradient-radial);
-    background-color: var(--red-button-neutre);
+.themeColorChangeAnimation{
+    
+
 }
 
-.themeColorChangeBackImg.themeIsGreen{
-    background: var(--green-gradient-radial);
-}
-
-.themeColorChangeBackImg.themeIsPurple{
-    background: var(--purple-gradient-radial);
-}
-
-.themeColorChangeBackgroundColor { 
-    background-color: var(--red-button-neutre);
-} */
 
 /*********** Back to the top Button **********/
 #topScroll{
@@ -98,7 +108,7 @@ button{
 
     padding: 10px;
 
-    position: absolute;
+    position: fixed;
     top: 100px;
     left: 0px;
 
@@ -160,7 +170,11 @@ button{
 #home{
     padding: 0 8%;
     height: 100%;
+    
+    background-image: radial-gradient(rgb(139,195,245),rgb(35, 148, 184))
 }
+
+
 
 /********** Header **********/
 header{
@@ -299,7 +313,7 @@ nav ul li a {
 
     background-color: var(--color-primary);
     color: white;
-    transition: 0.3s;
+    /* transition: 0.3s; */
 
     text-transform: uppercase;
 } 
@@ -370,7 +384,7 @@ nav ul li a {
     margin: 0 10px;
     padding: 0 20px;
 
-    background: var(--gradient-radial-primary);
+    /* background: var(--gradient-radial-primary); */
 
     border-radius: 5%;
     box-shadow:6px 6px 13px rgb(196, 196, 196);
@@ -416,6 +430,14 @@ nav ul li a {
 .featuresSolutions:hover{
     transition: 0.3s ease-out;
     bottom: 30px;
+}
+
+#featuresDesignIdTrans{
+    /* background: linear-gradient(180deg, #ff7147, #e0417f); */
+    background: radial-gradient(rgb(139,195,245),rgb(35, 148, 184));
+    
+
+    transition: all 0.1s ease-out;
 }
 
 /******************** Section Work ********************/
