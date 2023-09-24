@@ -16,21 +16,21 @@
     scroll-behavior: smooth;
 }
 
-body{
+body {
     font-family:Calibri, 'Trebuchet MS', sans-serif;
     position: relative;
 }
 
-button{
+button {
     cursor: pointer;
 }
 
-.titreSection{
+.titreSection {
     text-align: center;
     font-size: 3em;
 }
 
-.soustitreSection{
+.soustitreSection {
     text-align: center;
     font-weight: light;
     font-size: 1.5em;
@@ -41,7 +41,7 @@ button{
 
 
 /*********** Back to the top Button **********/
-#topScroll{
+#topScroll {
     position:fixed;    
     bottom: 25px;
     right: 25px;
@@ -54,46 +54,70 @@ button{
 }
 
 /*********** Gear Bloc **********/
-#gearContent{    
-    width: 150px;
-    height: 250px;
+#gearContent {    
+    width: 80px;
+    height: 73px;
 
-    padding: 10px;
+    padding: 10px 5px;
 
     position: fixed;
     top: 100px;
     left: 0px;
 
-    background: rgba(37, 37, 37, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    background: rgba(37, 37, 37, 0.5);
+    transition: 0.3s ease-in-out;
+    transition-delay:0.20s ;
+}
+
+#gearContent.gearMenuUnfold {    
+    height: 350px;
+    transition: 0.3s ease-out ;
 }
 
 /***** button/icon *****/
-#gearBtn{
+#gearBtn {
     border: 0;
     background:none;
 }
 
-#gearIcon{
+#gearIcon {
     font-size: 4em;
 }
 
 /********** Gear Menu **********/
-#gearMenu{
+#gearMenu {
+    visibility: hidden;
+    position: relative;
+    left: -80px;
+    transition: 0.3s ;
 
+}
+#gearMenu.gearMenuShow {
+    visibility: visible;
+    position: relative;
+    left: 0px;
+    transition: 0.3s ease-out ;
+    transition-delay:0.20s ;
 }
 
 /********** Gear Color Menu **********/
-#gearColorMenu{
+#gearColorMenu {
     display: flex;
     flex-direction: column;
-
+    margin-top: 15px;
 }
 
 #gearThemeBlue {
     width: 50px;
     height: 50px;
-    background: blue;
+    background: rgb(0, 60, 255);
     border: 0;
+    border-radius: 50%;
 }
 
 #gearThemeRed {
@@ -101,6 +125,8 @@ button{
     height: 50px;
     background: red;
     border: 0;
+    margin: 15px 0;
+    border-radius: 50%;
 }
 
 #gearThemeGreen {
@@ -108,6 +134,8 @@ button{
     height: 50px;
     background: green;
     border: 0;  
+    margin-bottom: 15px;
+    border-radius: 50%;
 }
 
 #gearThemePurple {
@@ -115,21 +143,21 @@ button{
     height: 50px;
     background: purple;
     border: 0;
+    border-radius: 50%;
 }
-
+/* .selectedGear {
+    border-radius: 30%;
+} */
 
 /******************** Section HOME ********************/
-#home{
+#home {
     padding: 0 8%;
     height: 100%;
     background-image: radial-gradient(var(--color-primary-gradient), var(--color-primary));
-    
 }
 
-
-
 /********** Header **********/
-header{
+header {
     width: 100%;
     height: 100%;
 
@@ -146,7 +174,7 @@ h1 {
 }
 
 /********** nav **********/
-nav{
+nav {
     flex: 2.5;
     font-size: 1.2em ;
     font-weight: bold;
@@ -176,23 +204,23 @@ nav ul li a {
 }
 
 /*********** homeSocials **********/
-.homeSocials{
+.homeSocials {
     flex: 1;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;  
 }
 
-.homeSocials a{
+.homeSocials a {
     color: white;
 }
 
-.homeSocials i{
+.homeSocials i {
     padding: 0 12px;
 }
 
 /********** homeContent **********/
-#homeContent{
+#homeContent {
     height: 95vh; 
     width: 100%;
 
@@ -205,7 +233,7 @@ nav ul li a {
     color: rgb(56, 56, 56) ;
 }
 
-#homeContent article{
+#homeContent article {
     flex: 1;
 }
 
@@ -214,14 +242,14 @@ nav ul li a {
 }
 
 /********** homeText **********/
-#homeText h2{  /* le padding permet au texte d'être légèrement plus bas que l'img et avoir un meilleur visuel */
+#homeText h2 {  /* le padding permet au texte d'être légèrement plus bas que l'img et avoir un meilleur visuel */
     padding-top: 40px;
     margin-bottom: 30px;
     font-size: 4.8em;
     font-weight: bold;
 }
 
-#homeText p{
+#homeText p {
     max-width: 500px;
     margin: 30px 0;
 
@@ -231,33 +259,34 @@ nav ul li a {
 }
 
 /********** form **********/
-#homeContent form{
+#homeContent form {
     position: relative;
     max-width: 500px;
-
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 24px;
     display: flex;
     align-items: center;
 }
 
-#homeContent input{ /* texte sur le form  */
-    width: 100%;
+#homeContent input { /* texte sur le form  */
+    width: 80%;
     height: 50px;
-    padding-left: 15px;
+    padding-left: 24px;
     border-radius: 24px;
     border: 0;
-    background-color: rgba(255, 255, 255, 0.7);
+    background: 0;
     color: gray;
 }
 
-#homeContent input:focus-visible{ /* texte sur le form  */
+#homeContent input:focus-visible { /* texte sur le form  */
     outline: none;
 }
 
-.submitEmail{ /* button du form */
+.submitEmail { /* button du form */
     position: absolute;  
-    right: 10px;
+    right: 2px;
 
-    height: 40px;
+    height: 46px;
     width: 95px;
 
     border-radius: 21px;
@@ -269,23 +298,23 @@ nav ul li a {
     text-transform: uppercase;
 } 
 
-.submitEmail:hover{
+.submitEmail:hover {
     transition: 0.3s;
     background-color: var(--color-tertiary);
 }
 
-.submitEmail:active{
+.submitEmail:active {
     transition: 0.3s;
     background-color: var(--color-secondary);
 }
 
 /******************** Section Features ********************/
-#features{
+#features {
     height: 1000px;
     padding: 0 8%;
 }
 
-.featuresText{
+.featuresText {
     height: 50%;
 
     display: flex;
@@ -294,19 +323,19 @@ nav ul li a {
     align-items: center;
 }
 
-.featuresText h2{
+.featuresText h2 {
     font-size: 3em;
     padding-bottom: 36px;
 }
 
-.featuresText p{
+.featuresText p {
     width: 35%;
     font-weight: light;
     font-size: 1.5em;
     color: gray;
 }
 
-#features article{
+#features article {
     display: flex;
     flex-direction: column;
     justify-content: flex-end; 
@@ -314,12 +343,12 @@ nav ul li a {
 }
 
 #features article h2,
-#features article p{
+#features article p {
     text-align: center;
 }
 
 /********** featuresContent **********/
-.featuresContent{ 
+.featuresContent { 
     height: 100%;
     display: flex;
     flex-direction: row;
@@ -328,7 +357,7 @@ nav ul li a {
 
 .featuresDesign, 
 .featuresColors, 
-.featuresSolutions{
+.featuresSolutions {
     width: 450px;
     height: 450px;
 
@@ -357,7 +386,7 @@ nav ul li a {
 
 .featuresDesign i,
 .featuresColors i,
-.featuresSolutions i{
+.featuresSolutions i {
     font-size: 3em;
     color: white;
     padding-bottom: 25px;
@@ -365,53 +394,53 @@ nav ul li a {
 
 .featuresDesign h3,
 .featuresColors h3,
-.featuresSolutions h3{
+.featuresSolutions h3 {
     padding: 10px 0;
     font-size: 2em;
 }
 
 .featuresDesign p,
 .featuresColors p,
-.featuresSolutions p{
+.featuresSolutions p {
     font-weight: lighter;
 }
 
 .featuresDesign:hover,
 .featuresColors:hover,
-.featuresSolutions:hover{
+.featuresSolutions:hover {
     transition: 0.3s ease-out;
     bottom: 30px;
 }
 
 /******************** Section Work ********************/
-#work{
+#work {
     background-color:  var(--gris-background);
     text-align: center;
     height: 800px;
 }
 
-#work article{
+#work article {
     height: 100%;
 }
 
-.workText{
+.workText {
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.workText h2{
+.workText h2 {
     font-size: 3em;
     font-weight: bold;
 }
 
-.workText p{
+.workText p {
     padding: 0 20%;
 }
 
 /******************** Section FAQ ********************/
-#faq{
+#faq {
     height: 1000px;
     padding: 5% 10%;
     display: flex;
@@ -419,7 +448,7 @@ nav ul li a {
 }
 
 /********** faqText **********/
-#faqText{
+#faqText {
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -431,19 +460,19 @@ nav ul li a {
     padding: 0 25%;
 }
 
-#faqText p{
+#faqText p {
     padding: 0 25%;
 }
 
 /********** faqContent **********/
-#faqContent{
+#faqContent {
     height: 100%;
     display: flex;
     justify-content: space-around;
 }
 
 /********** faqBloc  **********/
-.faqBloc{
+.faqBloc {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly; 
@@ -452,29 +481,29 @@ nav ul li a {
 }
 
 /* Elements textes au dessus de <figure><img>  */
-#faqContent h3{ 
+#faqContent h3 { 
     font-size: 2em;
     font-weight: bold;
 }
 
-#faqContent p{
+#faqContent p {
     font-size:  1.2em;
     color: gray;
     font-weight:300;
 }
 
 /* Elements textes en dessous de <figure><img>  */
-#faqContent h4{
+#faqContent h4 {
     font-size: 1.5em;
     font-weight: 400 ;
 }
 
-.faqDescription p{
+.faqDescription p {
     font-size: 1.1em;
     color: gray;
 }
 
-.faqBloc figure img{
+.faqBloc figure img {
     height: 250px;
     width: 250px;
     border-radius: 50%;
@@ -483,18 +512,18 @@ nav ul li a {
     transition: 0.3s;
 }
 
-.faqImgConteneur{
+.faqImgConteneur {
     border-radius: 50%;
     overflow: hidden;
 }
 
-.faqOverlay{
+.faqOverlay {
     width:250px;
     height:250px;
     position: relative;
 }
 
-.faqSocials{
+.faqSocials {
     opacity: 0;
     display: flex;
     flex-direction: column;
@@ -507,7 +536,7 @@ nav ul li a {
     transition: 0.3s;
 }
 
-.faqSocials a{
+.faqSocials a {
     width: 25px;
     height: 25px;
     margin: 10px 0;
@@ -525,14 +554,14 @@ nav ul li a {
     align-items: center;
 }
 
-.faqOverlay:hover img{
+.faqOverlay:hover img {
     filter: grayscale(0%);
     scale: 1.5;
     transition: 0.3s;
     transform: scale(0.8);
 }
 
-.faqOverlay:hover .faqSocials{
+.faqOverlay:hover .faqSocials {
     opacity: 1;
     bottom: 60px;
     left: 25px;
@@ -540,7 +569,7 @@ nav ul li a {
 }
 
 /******************** Section Kucra ********************/
-#kucra{    
+#kucra {    
     width: 100%;
     height: 700px;
 
@@ -551,7 +580,7 @@ nav ul li a {
     background-size:cover;
 }
 
-#kucraBackground{ 
+#kucraBackground { 
     width: 100%;
     height: 100%;
     background-color: rgba(36, 36, 36, 0.6);
@@ -571,14 +600,14 @@ nav ul li a {
     text-align: center;
 }
 
-#kucra p{
+#kucra p {
     padding: 0 25%;
 
     color: rgb(218, 218, 218);
 }
 
 /********** Button **********/
-#btnKucra{    
+#btnKucra {    
     height: 45px;
     width: 150px;
 
@@ -593,23 +622,23 @@ nav ul li a {
     transition-duration: 0.3s;
 }
 
-#btnKucra a{
+#btnKucra a {
     color: rgb(218, 218, 218);
     text-decoration: none;
 }
 
-#btnKucra:hover{ /* modif en hover */
+#btnKucra:hover { /* modif en hover */
     transition-duration: 0.3s;
     background:  rgba(87, 87, 87, 0.6);
 }
 
-#btnKucra:active{ /* modif appliqué lors d'un clic */
+#btnKucra:active { /* modif appliqué lors d'un clic */
     transition-duration: 0.3s;
     background:  rgba(36, 36, 36, 0.6);
 }
 
 /******************** Section Client ********************/
-#client{
+#client {
     height: 800px;
     padding: 0 10%;
     background-color: var(--gris-background);
@@ -622,51 +651,51 @@ nav ul li a {
     justify-content: space-evenly;
 }
 
-#clientText p{
+#clientText p {
     padding: 0 25%;
 }
 
-#clientGalerie{
+#clientGalerie {
     padding: 0 7%;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
 }
 
-.imgClient{
+.imgClient {
     width: 120px;
     opacity: 0.6;
     transition: 0.3s;
 }
 
-.imgClient:hover{
+.imgClient:hover {
     scale: 1.6 ;
     opacity: 1;
     transition: 0.3s;
 }
 
 /******************** Section About ********************/
-#about{
+#about {
     height: 800px;
     padding: 8% 8%;
 }
 
-#about article{
+#about article {
     display: flex;
     justify-content: space-around;
 }
 
-#aboutContent{
+#aboutContent {
     width: 45%;
 }
 
 /********** aboutText **********/
-.aboutText h2{
+.aboutText h2 {
     font-size: 2.2em;
     padding: 45px 0;
 }
 
-.aboutText p{
+.aboutText p {
     width: 90%;
     font-size: 1.5em;
     font-weight: 300 ;
@@ -674,24 +703,24 @@ nav ul li a {
 }
 
 /********** aboutBloc **********/
-.aboutBloc{ 
+.aboutBloc { 
     width: 40%;
     padding: 40px 0;
     display: flex;
     justify-content: space-between;
 }
 
-.aboutBloc h3{
+.aboutBloc h3 {
     font-size: 1.7em;
 }
 
-.aboutBloc p{
+.aboutBloc p {
     font-size: 1.2em;
     color: gray;
 }
 
 /********** Button **********/
-#aboutContent button{
+#aboutContent button {
     width: 150px;
     height: 45px;
     
@@ -706,33 +735,33 @@ nav ul li a {
     transition: 0.3s;
 }
 
-#aboutContent button:hover{
+#aboutContent button:hover {
     background-color: var(--color-tertiary);
     transition: 0.3s;
 }
 
-#aboutContent button:active{
+#aboutContent button:active {
     background-color: var(--color-secondary);
     transition: 0.3s;
 }
 
 /********** figure **********/
-#about article figure{
+#about article figure {
     width: 45%;
 }
 
-#about article figure img{
+#about article figure img {
     width: 100%;
 }
 
 /******************** Section Pricing ********************/
-#pricing{
+#pricing {
     height: 1000px;
     background-color: var(--gris-background);
     padding: 0 10%;
 }
 
-#pricing article{
+#pricing article {
     width: 100%;
     height: 100%;
     display: flex;
@@ -741,16 +770,16 @@ nav ul li a {
 }
 
 /***** pricingText *****/
-#pricingText{
+#pricingText {
     width: 100%;
 }
 
-#pricingText p{
+#pricingText p {
     padding: 0 27% ;
 }
 
 /***** pricingContent *****/
-#pricingContent{
+#pricingContent {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -758,7 +787,7 @@ nav ul li a {
 
 #pricingStart, 
 #pricingAdv, 
-#pricingPro{ /* affecte pricingStart/advanced/pro */ 
+#pricingPro { /* affecte pricingStart/advanced/pro */ 
     width: 325px;
     height: 450px ;
 
@@ -782,7 +811,7 @@ nav ul li a {
 
 #pricingStart:hover, 
 #pricingAdv:hover, 
-#pricingPro:hover{ 
+#pricingPro:hover { 
     bottom: 15px;
     transition: 0.3;
 }
@@ -800,13 +829,13 @@ nav ul li a {
 
 #pricingStart h3 i,
 #pricingAdv h3 i, 
-#pricingPro h3 i{ 
+#pricingPro h3 i { 
     font-size: 1em;
     padding: 0 5px;
     text-align: center;
 }
 
-.pricingSales{
+.pricingSales {
     width: 50px;
     height: 50px;
     padding: 8px 0;
@@ -825,22 +854,22 @@ nav ul li a {
     line-height: 15px;
 }
 
-.pricingPrix{ /* sous titre : prix/month */
+.pricingPrix { /* sous titre : prix/month */
     text-align: center;
     font-size: 1.1em;
 }
 
-.pricingPrix span{ /* le prix */
+.pricingPrix span { /* le prix */
     color:var(--color-primary);
     font-size: 3em;
 }
 
-.pricingPrix sup{ /* le symbole dollar, lui permet d'être surélevé */
+.pricingPrix sup { /* le symbole dollar, lui permet d'être surélevé */
     color:var(--color-primary);
     font-size: 30px ;
 }
 
-.pricingDropdownContent{ /* div avec la liste et le btn */
+.pricingDropdownContent { /* div avec la liste et le btn */
  height: fit-content;
 }
 
@@ -851,7 +880,7 @@ nav ul li a {
     justify-content: space-between;
 }
 
-.pricingDropdownContent ul li{  /* aligne horizontalement les deux <p> des <li> */
+.pricingDropdownContent ul li {  /* aligne horizontalement les deux <p> des <li> */
     list-style: none;
     display: flex;
     flex-direction: row;
@@ -875,50 +904,50 @@ nav ul li a {
     transition: 0.3s;
 }
 
-.pricingDropdownContent button:hover{ /* hover premier et dernier bloc */
+.pricingDropdownContent button:hover { /* hover premier et dernier bloc */
     background-color: var(--color-tertiary);
     border-color: var(--color-tertiary);
     color: white;
     transition: 0.3s;
 }
 
-.pricingDropdownContent button:active{  /* clique premier et dernier bloc */
+.pricingDropdownContent button:active {  /* clique premier et dernier bloc */
     background-color:  var(--color-secondary);
     border-color: var(--color-secondary);
     transition: 0.3s;
 }
 
 /********** icon **********/
-.fa-circle-xmark{ /* icon faux */
+.fa-circle-xmark { /* icon faux */
     color: rgb(138, 0, 0);
 }
 
-.fa-circle-check{ /* icon vraie */
+.fa-circle-check { /* icon vraie */
     color: rgb(0, 71, 0);
 }
 
-.fa-circle-chevron-down{
+.fa-circle-chevron-down {
     display: none;
 }
 
-.fa-circle-chevron-up{
+.fa-circle-chevron-up {
     display: none;
 }
 
-#pricing ul li p i{ /* attributs des balises <i> */
+#pricing ul li p i { /* attributs des balises <i> */
     font-size: 1.2em;
     padding: 0 3px;
 }
 
 
 /******************** Section Blog ********************/
-#blog{
+#blog {
     height: 800px;
     padding: 0 10%;
 }
 
 /********** article **********/
-#blog article{
+#blog article {
     height: 100%;
     width: 100%;
 
@@ -927,22 +956,22 @@ nav ul li a {
     justify-content: space-evenly;
 }
 
-#blogText h2{
+#blogText h2 {
     text-align: center;
 }
 
-#blogText p{
+#blogText p {
     padding: 0 20%;
 }
 
 /********** blogContent **********/
-#blogContent{
+#blogContent {
     display: flex;
     flex-direction: row;
 }
 
 /***** blogBloc *****/
-.blogBloc{
+.blogBloc {
     margin: 0 10px;
     padding: 0 20px;
     display: flex;
@@ -952,13 +981,13 @@ nav ul li a {
     flex: 1;
 }
 
-.blogBloc h3{
+.blogBloc h3 {
     width: 100%;
     font-size: 1.7em;
     padding-top: 20px;
 }
 
-.blogBloc p{
+.blogBloc p {
     width: 70%;
     padding: 20px 0;
     color: gray;
@@ -966,24 +995,24 @@ nav ul li a {
     padding: 15px 0 10px;
 }
 
-.blogBloc a{
+.blogBloc a {
     text-decoration: none;
 }
 
 
 /***** img *****/
-.blogBloc img{
+.blogBloc img {
     border-radius: 5px;
     width: 100%;
     vertical-align: bottom;
 }
 
 /********** HoverText *********/
-.blogOverlay{ 
+.blogOverlay { 
     position: relative;
 }
 
-.blogHoverText{
+.blogHoverText {
     width:100%;
     height: 100%;
 
@@ -1004,37 +1033,37 @@ nav ul li a {
     transition: 0.3s;
 }
 
-.blogHoverText h3{
+.blogHoverText h3 {
     font-size: 1.1em;
     color: lightgray;
 }
 
-.blogHoverText p{
+.blogHoverText p {
     color: lightgray;
     padding: 0;
 }
 
 
 /******************** Section Contact ********************/
-#contact{
+#contact {
     background-color: rgb(31, 31, 31);
     color: rgb(153, 153, 153);
 }
 
-footer{
+footer {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-#footerSocials{
+#footerSocials {
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
 
-#footerSocials a{
+#footerSocials a {
     width: 40px;
     height: 40px;
     margin: 2em 1em 0.5em 1em;
@@ -1051,19 +1080,19 @@ footer{
     align-items: center;
 }
 
-.information{
+.information {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.information a,.information p{
+.information a,.information p {
     color:rgb(153, 153, 153);
     text-decoration: none;
     margin: 0.5em 1em;
 }
 
-footer small{
+footer small {
     margin: 1em;
 }
 
@@ -1076,36 +1105,36 @@ and (max-device-width : 1200px) {
 /******************** General ********************/
 
 /*********** Back to the top Button **********/
-#topScroll{ 
+#topScroll { 
     bottom: 25px;
     font-size: 3em;
     z-index: 99;
 }
 
 /******************** section home ********************/
-#home{
+#home {
     height: fit-content;
     padding: 10px 4%;
 }
 
 /********** Header **********/
-header{
+header {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: initial;
 }
 
-.homeSocials{
+.homeSocials {
     padding: 15px 0;
 }
 
-.homeSocials a i{
+.homeSocials a i {
     font-size: 1.3em;
 }
 
 /********** nav **********/
-nav{
+nav {
     position: relative;
 
 }
@@ -1116,7 +1145,7 @@ nav{
     position: relative;
 }
 
-.navMenuBurger.responsive{
+.navMenuBurger.responsive {
     height: 450px;
 
     display: flex;
@@ -1130,7 +1159,7 @@ nav{
     position: absolute; /* absolute pour ne pas tout bouger */ 
 }
 
-.navMenuBurger.responsive li{    
+.navMenuBurger.responsive li {    
     width: 40%;
     height: 100%;
 
@@ -1143,12 +1172,12 @@ nav{
     text-align: left;
 }
 
-.navMenuBurger.responsive li:not(:last-child){
+.navMenuBurger.responsive li:not(:last-child) {
     border-bottom: 1px solid lightgray;
     width: 100%;
 }
 
-.navMenuBurger li a{    
+.navMenuBurger li a {    
     color: var(--color-primary);
 }
 
@@ -1160,7 +1189,7 @@ nav{
     z-index: 10;
 }
 
-.iconClassBurger a{
+.iconClassBurger a {
     color: white;
 }
 
@@ -1174,7 +1203,7 @@ transition: 0.3s;
 }
 
 /********** homeContent **********/
-#homeContent{
+#homeContent {
     height: fit-content;
 
     flex-direction: column-reverse;
@@ -1184,7 +1213,7 @@ transition: 0.3s;
     padding: 15px 0;
 }
 
-#homeContent article{
+#homeContent article {
    flex: 0;
 }
 
@@ -1194,50 +1223,50 @@ transition: 0.3s;
 }
 
 /********** homeText **********/
-#homeText h2{  
+#homeText h2 {  
     padding-top: initial; /* remove */
     font-size: 4em; /* smaller */
     text-align: center;
 }
 
-#homeText p{
+#homeText p {
     max-width: initial; /* removed limit */
     text-align: center; 
 }
 
 /********** form **********/
-#homeContent form{
+#homeContent form {
     max-width: initial;
 }
 
-#homeContent input{ /* texte sur le form  */
+#homeContent input { /* texte sur le form  */
     height: 70px; /* bigger */
     border-radius: 20px;
     font-size: 1.5em ;
 }
 
-.submitEmail{ /* button du form */
+.submitEmail { /* button du form */
     height: 60px; /* bigger */
     border-radius: 15px;
 } 
 
 /******************** Section Features ********************/
-#features{
+#features {
     height: fit-content;
     padding: 35px 30px;
 }
 
-.featuresText{
+.featuresText {
     height: 25%;
 
 }
 
-.featuresText p{
+.featuresText p {
     width: initial;
 }
 
 /********** featuresContent **********/
-.featuresContent{ 
+.featuresContent { 
     width: 100%;
     flex-direction: column;
     justify-content: flex-start; /* center => this */ 
@@ -1246,7 +1275,7 @@ transition: 0.3s;
 
 .featuresDesign, 
 .featuresColors, 
-.featuresSolutions{
+.featuresSolutions {
     width: 550px; /* bigger */
     height: fit-content; /* smaller */
     flex: 0; /* 1 => this  */
@@ -1258,43 +1287,43 @@ transition: 0.3s;
 
 .featuresDesign i,
 .featuresColors i,
-.featuresSolutions i{
+.featuresSolutions i {
     font-size: 2.5em; /* smaller */ 
     padding: 15px 0; /* up padd */
 }
 
 .featuresDesign h3,
 .featuresColors h3,
-.featuresSolutions h3{
+.featuresSolutions h3 {
     padding: 0;
     font-size: 2.5em; /* bigger */
 }
 
 .featuresDesign p,
 .featuresColors p,
-.featuresSolutions p{
+.featuresSolutions p {
     font-size: 1.5em;
     margin: 10px;
 }
 
 /******************** Section Work ********************/
-#work{
+#work {
     height: fit-content;
     padding: 35px 0;
 }
 
-.workText p{
+.workText p {
     font-size: 1.5em;
     padding: 0 5%;
 }
 
 /******************** Section FAQ ********************/
-#faq{
+#faq {
     padding: 15px 35px;
     height: fit-content;
 }
 
-#faqContent{
+#faqContent {
     padding: 0 10%;
 }
 
@@ -1304,37 +1333,37 @@ transition: 0.3s;
     font-size: 2.6em;
 }
 
-#faqText p{
+#faqText p {
     padding: 25px 0;
 }
 
 /********** faqContent **********/
-#faqContent{
+#faqContent {
     flex-wrap: wrap;
 }
 
 /********** faqBloc  **********/
-.faqBloc{
+.faqBloc {
     padding: 35px 15px ;
 }
 
-.faqBloc figure img{
+.faqBloc figure img {
     height: 200px; 
     width: 200px;
 }
 
-.faqOverlay{
+.faqOverlay {
     width:200px; 
     height:200px;
 }
 
-.faqSocials{
+.faqSocials {
     opacity: 1;
     bottom: 30px; 
     left: 25px;
 }
 
-.faqOverlay:hover .faqSocials{
+.faqOverlay:hover .faqSocials {
     bottom: 30px;
     left: 25px;
 }
@@ -1348,61 +1377,61 @@ transition: 0.3s;
     background-position: 80%;
 }
 
-#kucra article{    
+#kucra article {    
     padding: 35px 0;
 }
 
-#kucraBackground{ 
+#kucraBackground { 
     background-color: rgba(24, 24, 24, 0.8);
 }
 
-#kucra p{
+#kucra p {
     padding: 0 15px;
 }
 
-#btnKucra{    
+#btnKucra {    
     height: 70px;
     margin: 25px 0 0 0;
 }
 
 /******************** Section Client ********************/
-#client{
+#client {
     height: fit-content;
     padding: 0 5%;
 }
 
 
-#clientText h2{
+#clientText h2 {
     padding: 35px 0;
 }
 
-#clientText p{
+#clientText p {
     padding: 0 15px;
 }
 
-#clientGalerie{
+#clientGalerie {
     padding: 35px 15px;
     flex-direction: row;
     flex-wrap: wrap;
 }
 
-.imgClient{
+.imgClient {
     width: 160px;
 }
 
 /******************** Section About ********************/
-#about{
+#about {
     height: fit-content;
     padding: 35px 15px;
 }
 
-#about article{
+#about article {
     display: flex;
     flex-direction: column-reverse;
     justify-content: space-around;
 }
 
-#aboutContent{
+#aboutContent {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -1411,34 +1440,34 @@ transition: 0.3s;
 }
 
 /********** aboutText **********/
-.aboutText h2{
+.aboutText h2 {
     text-align: center;
     font-size: 3em;
 }
 
-.aboutText p{
+.aboutText p {
     width: 100%;
     text-align: center;
 }
 
 /********** aboutBloc **********/
-.aboutBloc{ 
+.aboutBloc { 
     width: 100%;
     justify-content: space-around;
     text-align: center;
 }
 
-.sousBloc{
+.sousBloc {
     text-align: center;
 }
 
 /********** figure **********/
-#about article figure img{
+#about article figure img {
     display: none;
 }
 
 /********** Button **********/
-#aboutContent button{
+#aboutContent button {
     width: 70%;
     height: 65px;
 
@@ -1446,12 +1475,12 @@ transition: 0.3s;
 }
 
 /******************** Section Pricing ********************/
-#pricing{
+#pricing {
     height: fit-content;
     padding: 35px 15px;
 }
 
-#pricing article{
+#pricing article {
     width: 100%;
     height: 100%;
 
@@ -1460,7 +1489,7 @@ transition: 0.3s;
     justify-content: space-evenly;
 }
 
-#pricingContent{
+#pricingContent {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1468,11 +1497,11 @@ transition: 0.3s;
 }
 
 /***** pricingText *****/
-#pricingText{
+#pricingText {
     width: 100%;
 }
 
-#pricingText p{
+#pricingText p {
     padding: 0 10% ;
 }
 
@@ -1485,24 +1514,24 @@ transition: 0.3s;
 
 #pricingStart,
 #pricingAdv, 
-#pricingPro{
+#pricingPro {
     display: block;
 }
 /***** changement de taille du fonds *****/ 
-#pricingContent .pricingBackgroundFold{ 
+#pricingContent .pricingBackgroundFold { 
     width: 450px;
     height: 140px ;
     margin: 20px 10px;
     transition: 0.3s ease-in;
 }
 
-#pricingContent .pricingBackgroundFold.unfold{
+#pricingContent .pricingBackgroundFold.unfold {
     height: 450px;
     transition: 0.3s ease-out;
 }
 
 /***** disparition/apparation du contentu *****/
-.pricingDropdownContent{
+.pricingDropdownContent {
     display: none;
 }
 
@@ -1515,22 +1544,22 @@ transition: 0.3s;
 }
 
 /***** icon *****/
-.fa-circle-chevron-down{
+.fa-circle-chevron-down {
     display: initial;
 }
 
-.fa-circle-chevron-up{
+.fa-circle-chevron-up {
     display: initial;
 }
 
 /******************** Section Blog ********************/
-#blog{
+#blog {
     height: fit-content;
     padding: 0 5%;
 }
 
 /********** article **********/
-#blog article{
+#blog article {
     height: 100%;
     width: 100%;
 
@@ -1539,12 +1568,12 @@ transition: 0.3s;
     justify-content: center;
 }
 
-#blogText p{
+#blogText p {
     padding: 0 15px;
 }
 
 /********** blogContent **********/
-#blogContent{
+#blogContent {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1552,31 +1581,31 @@ transition: 0.3s;
 }
 
 /***** blogBloc *****/
-.blogBloc{
+.blogBloc {
     margin: 25px 10px;
     justify-content: center;
     align-items: center;
 }
 
-.blogBloc h3{
+.blogBloc h3 {
     font-size: 2em; /* bigger */
     padding-top: 10px; /* smaller */
     width: 100%;
     text-align: center;
 }
 
-.blogBloc p{
+.blogBloc p {
     width: 100%;
     font-size: 1.2em;
     text-align: center;
 }
 
-.blogBloc  a{
+.blogBloc  a {
     font-size: 1.2em;
 }
 
 /********** HoverText *********/
-.blogHoverText{
+.blogHoverText {
     width:0%;
     height: 0%;
 }
@@ -1587,7 +1616,7 @@ transition: 0.3s;
     padding: 0 10% ;
 }
 
-.blogBloc img{
+.blogBloc img {
     width: 100%;
 }
 
@@ -1598,12 +1627,12 @@ transition: 0.3s;
 and (max-device-width : 645px) {
 
 /******************** General ********************/
-.soustitreSection{
+.soustitreSection {
     padding: 0 15px;
 }
 
 /*********** Back to the top Button **********/
-#topScroll{ 
+#topScroll { 
     top: 50px;
     bottom: initial;
     font-size: 2em;
@@ -1611,44 +1640,44 @@ and (max-device-width : 645px) {
 }
 
 /******************** section home ********************/
-#home{
+#home {
     padding: 1% 0 ;
     height: fit-content;
     width: 100%;
 }
 
 /********** Header **********/
-header{
+header {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: initial;
 }
 
-h1{
+h1 {
     display: none;
 }
 
-.homeSocials a i{
+.homeSocials a i {
     font-size: 1.2em;
 }
 
 /********** nav **********/
-nav{
+nav {
     position: relative;
 }
 
 /********** menuBurger **********/
-.navMenuBurger{
+.navMenuBurger {
     display: none;
 }
 
-.navMenuBurger{
+.navMenuBurger {
     height: 0;
     justify-content: initial;
 }
 
-.navMenuBurger.responsive{
+.navMenuBurger.responsive {
     align-items: flex-start; /* align left */ 
     z-index: 99; 
     border-top-left-radius: 0 ;
@@ -1656,7 +1685,7 @@ nav{
 
 }
 
-.navMenuBurger.responsive li{    
+.navMenuBurger.responsive li {    
     text-align: left;
     padding-top: 15px;
     padding-left:  15px;
@@ -1669,7 +1698,7 @@ nav{
 }
 
 /********** homeContent **********/
-#homeContent{
+#homeContent {
     height: fit-content;
     padding: 0 15px 35px;
 
@@ -1680,74 +1709,74 @@ nav{
 }
 
 /********** homeText **********/
-#homeText h2{  
+#homeText h2 {  
     font-size: 3.5em; /* smaller */
     text-align: center;
     padding-top: 0;
 }
 
-#homeText p{
+#homeText p {
     max-width: initial; /* removed limit */
     text-align: center; 
 }
 
 /********** form **********/
 
-#homeContent form{
+#homeContent form {
     max-width: initial;
 }
 
-#homeContent input{ /* texte sur le form  */
+#homeContent input { /* texte sur le form  */
     height: 60px; /* bigger */
     border-radius: 20px;
     font-size: 1em ;
 }
 
-.submitEmail{ /* button du form */
+.submitEmail { /* button du form */
     height: 50px; /* bigger */
     border-radius: 15px;
 } 
 
 /******************** Section Features ********************/
-#features{
+#features {
     height: fit-content;
     padding: 35px 0;
 }
 
-.featuresText h2{
+.featuresText h2 {
     font-size: 2.7em;
     padding: 0 15px;
 }
 
 .featuresDesign, 
 .featuresColors, 
-.featuresSolutions{
+.featuresSolutions {
     width: 100%;
 }
 
 /******************** Section Work ********************/
-#work{
+#work {
     height: fit-content;
     padding: 35px 15px;
 }
 
-.workText p{
+.workText p {
     font-size: 1.5em;
     padding: 0;
 }
 
 /******************** Section FAQ ********************/
-#faq{
+#faq {
     padding: 35px 1% 0;
     height: fit-content;
 }
 
-#faqContent{
+#faqContent {
     padding: 0 10%;
 }
 
 /********** faqText **********/
-#faqText{
+#faqText {
     justify-content: space-evenly;
 }
 
@@ -1757,97 +1786,97 @@ nav{
     text-align: center;
 }
 
-#faqText p{
+#faqText p {
     padding: 0 15px;
 }
 
-.faqBloc{
+.faqBloc {
     padding: 0;
     margin: 25px 0;
 }
 
 /******************** Section Kucra ********************/
-#kucra{
+#kucra {
     height: fit-content;
 }
 
-#kucra h2{
+#kucra h2 {
     padding: 0 15px 20px;
 }
 
-#kucra p{
+#kucra p {
     padding: 0 15px 20px;
 }
 
 /******************** Section Client ********************/
-#client{
+#client {
     height: fit-content;
     padding: 35px 0;
 }
 
-#client h2{
+#client h2 {
     padding: 0 0 35px;
 }
 
-#clientGalerie{
+#clientGalerie {
     padding: 25px 15px 0;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
 }
 
-.imgClient{
+.imgClient {
     width: 100px;
 }
 
 /******************** Section About ********************/
-#about{
+#about {
     height: fit-content;
     padding: 35px 15px;
 }
 
-.aboutBloc{
+.aboutBloc {
     padding: 25px 0;
 }
 
-.aboutText h2{
+.aboutText h2 {
     text-align: center;
     font-size: 3em;
 }
 
 
 /******************** Section Pricing ********************/
-#pricing{
+#pricing {
     height: fit-content;
     padding: 20px 15px ;
 }
 
 #pricingStart, 
 #pricingAdv, 
-#pricingPro{ /* affecte pricingStart/advanced/pro */ 
+#pricingPro { /* affecte pricingStart/advanced/pro */ 
     margin: 15px 0;
 }
 
-#pricingText p{
+#pricingText p {
     padding: 0 15px;
 }
 
-#pricingContent .pricingBackgroundFold{
+#pricingContent .pricingBackgroundFold {
     width: 100%;
 } 
 
 /******************** Section Blog ********************/
-#blog{
+#blog {
     height: fit-content; /* bigger */ 
     padding: 0 1%; /* smaller */
 }
 
 /********** article **********/
-#blogText h2{
+#blogText h2 {
     padding: 35px 0;
 }
 
-#blogText p{
+#blogText p {
     padding: 0 15px;
 }
 
@@ -1856,7 +1885,7 @@ nav{
 /***** blogBloc *****/
 
 /********** HoverText *********/
-.blogHoverText{
+.blogHoverText {
     display: none;
 }
 
@@ -1874,7 +1903,7 @@ nav{
 }
 
 /******************** footer ********************/
-.information a,.information p{
+.information a,.information p {
     color:rgb(153, 153, 153);
     text-decoration: none;
     margin: 0.2em;
