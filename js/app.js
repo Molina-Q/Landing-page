@@ -88,7 +88,7 @@ themeColors.forEach((themeColor) =>
     document.getElementById("gearTheme" + themeColor.name).addEventListener("click", function(){
 
     const element = document.querySelector(":root");               // <-- id of the button we're transitioning
-    const transitionTime = 600 ;          // <-- 1000 = 100 ms temps de l'animation
+    const transitionTime = 600 ;                                // <-- 1000 = 100 ms temps de l'animation
     let intervalFrame;                  // <-- stores the interval frame
     let currentPercent = 0;                 // <-- current percentage through the animation
     let elapsed = 0;                    // <-- number of frames which have ellapsed 

@@ -7,6 +7,12 @@
     --color-tertiary: rgb(0, 108, 138);
 
     --gradient-radial-primary: radial-gradient(var(--color-primary-gradient), var(--color-primary));
+
+    --background-gear-blue: rgb(35, 148, 184);
+    --background-gear-red: rgb(184, 35, 35);
+    --background-gear-green: rgb(35, 184, 35);
+    --background-gear-purple: rgb(142, 35, 184);
+
 }
 
 * {
@@ -71,7 +77,7 @@ button {
 
     background: rgba(37, 37, 37, 0.5);
     transition: 0.3s ease-in-out;
-    transition-delay:0.20s ;
+    transition-delay:0.15s ;
 }
 
 #gearContent.gearMenuUnfold {    
@@ -115,7 +121,7 @@ button {
 #gearThemeBlue {
     width: 50px;
     height: 50px;
-    background: rgb(0, 60, 255);
+    background-color: var(--background-gear-blue);
     border: 0;
     border-radius: 50%;
 }
@@ -123,7 +129,7 @@ button {
 #gearThemeRed {
     width: 50px;
     height: 50px;
-    background: red;
+    background-color: var(--background-gear-red);
     border: 0;
     margin: 15px 0;
     border-radius: 50%;
@@ -132,7 +138,8 @@ button {
 #gearThemeGreen {
     width: 50px;
     height: 50px;
-    background: green;
+    background-color: var(--background-gear-green);
+
     border: 0;  
     margin-bottom: 15px;
     border-radius: 50%;
@@ -141,7 +148,7 @@ button {
 #gearThemePurple {
     width: 50px;
     height: 50px;
-    background: purple;
+    background-color: var(--background-gear-purple);
     border: 0;
     border-radius: 50%;
 }
