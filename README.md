@@ -2,6 +2,8 @@
 
 HTML - CSS - JS
 
-A single page application.
-Added the ability to change the radient's background colors with multiple buttons.
-The transition has been made smooth with JS.
+<p>A single page application.</p>
+<ul>
+  <li>Added the ability to change the colors of the gradient in the background with multiple buttons, the transition was made smooth with JS</li>
+  <li>the site is responsive</li>
+</ul>
